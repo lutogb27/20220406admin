@@ -68,12 +68,10 @@ class FormController extends Controller
     return view('complete');
 
     }
-
-    function Loginadmin(){
-		return view("admin.login");
-	}
 	
 	function login(Request $request){
+        return view("login");
+
 		//入力内容をチェックする
 		$user = $request->input("user");
 		$password = $request->input("password");
@@ -83,7 +81,7 @@ class FormController extends Controller
 			return redirect("admin");
 		}
 		//ログイン失敗
-		return redirect("admin/login")->withErrors([
+		return redirect("anmin/login")->withErrors([
 			"login" => "ユーザーIDまたはパスワードが違います"
 		]);
 		

@@ -37,5 +37,4 @@ Route::group(['middleware' => ['auth.admin']], function () {
 });
 
 //管理側ログイン
-Route::get('/admin/login', [FormController::class, 'login'])->name('loginadmin');;
-Route::post('/admin/login', [FormController::class, 'login'])->name('login');;
+Route::get('/admin/login', [FormController::class, 'login'])->name('login');
