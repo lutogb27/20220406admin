@@ -8,6 +8,7 @@
 </head>
 <body>
   @extends('layouts.admin')
+	<form method="post" action="{{ route('admin_top') }}">
 
 @section('content')
 <div class="container">

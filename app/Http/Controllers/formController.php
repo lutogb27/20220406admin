@@ -70,7 +70,7 @@ class FormController extends Controller
     }
 	
 	function login(Request $request){
-        return view("login");
+        return view("admin.admin_login");
 
 		//入力内容をチェックする
 		$user = $request->input("user");
@@ -78,11 +78,11 @@ class FormController extends Controller
 		//ログイン成功
 		if($user == "hogehoge" && $password == "fugafuga"){
 			$request->session()->put("admin_auth", true);
-			return redirect("admin");
+			return redirect("admin.admin_top");
 		}
 		//ログイン失敗
-		return redirect("anmin/login")->withErrors([
-			"login" => "ユーザーIDまたはパスワードが違います"
+		return redirect("admin.admin_login")->withErrors([
+			"error" => "ユーザーIDまたはパスワードが違います"
 		]);
 		
 	}
