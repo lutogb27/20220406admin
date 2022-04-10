@@ -68,10 +68,12 @@ class FormController extends Controller
     return view('complete');
 
     }
-	
-	function login(Request $request){
-        return view("admin.admin_login");
 
+    function login(){
+		return view("admin.admin_login");
+	}
+	
+	function showadminlogin(Request $request){
 		//入力内容をチェックする
 		$user = $request->input("user");
 		$password = $request->input("password");
