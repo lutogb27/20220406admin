@@ -30,15 +30,15 @@ Route::group(['middleware' => ['auth.admin']], function () {
 	//ログアウト実行
 	Route::post('/admin/logout', [FormController::class, 'logout'])->name('logout');;
 	//ユーザー一覧
-	Route::get('/admin/user_list', [FormController::class, 'user_list'])->name('user_list');;
+	Route::get('/admin/user_list', [admin\ManageUserController::class, 'user_list'])->name('user_list');;
 	//ユーザー詳細
-	Route::get('/admin/user/{id}', [FormController::class, 'user'])->name('user');;
+	Route::get('/admin/user/{id}', [admin\ManageUserController::class, 'user'])->name('user');;
 
 });
 
 //管理側ログイン
 // ログインの処理だけを行う、loginメソッド内でお問い合わせ一覧にリダイレクトする
-Route::post('/admin/login', [FormController::class, 'login'])->name('login');
+Route::post('/admin/login', [FormController::class, 'login'])->name('showadminlogin');
 
 // お問い合わせ一覧ページ
-Route::get('/admin/top', [FormController::class, 'admin.top'])->name('admin.top');
+Route::get('/admin/login', [FormController::class, 'login'])->name('login');
