@@ -87,4 +87,13 @@ class FormController extends Controller
 		
 	}
 
+    function logout(Request $request){
+		$request->session()->forget("admin_auth");
+		return redirect("admin");
+	}
+
+    function show(){
+		return view("admin.admin_top");
+	}
+
 }
