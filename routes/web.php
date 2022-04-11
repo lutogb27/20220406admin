@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth.admin']], function () {
 
 //管理側ログイン
 // ログインの処理だけを行う、loginメソッド内でお問い合わせ一覧にリダイレクトする
-Route::post('/admin/login', [FormController::class, 'admin.admin_top'])->name('showadminlogin');
+Route::post('/admin/login', [FormController::class, 'showadminlogin'])->name('showadminlogin');
 
 // お問い合わせ一覧ページ
 Route::get('/admin/login', [FormController::class, 'login'])->name('login');
