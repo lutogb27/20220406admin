@@ -80,10 +80,10 @@ class FormController extends Controller
 		//ログイン成功
 		if($user == "hogehoge" && $password == "fugafuga"){
 			$request->session()->put("admin_auth", true);
-			return redirect("admin.admin_top");
+			return redirect("/admin");
 		}
 		//ログイン失敗
-		return redirect("admin.admin_login")->withErrors([
+		return redirect("admin/login")->withErrors([
 			"error" => "ユーザーIDまたはパスワードが違います"
 		]);
 		

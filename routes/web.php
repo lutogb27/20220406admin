@@ -26,13 +26,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name(
 Route::group(['middleware' => ['auth.admin']], function () {
 	
 	//管理側トップ
-	Route::get('/admin', [FormController::class, 'admin'])->name('admin');;
+	Route::get('/admin', [FormController::class, 'show'])->name('admin');;
 	//ログアウト実行
 	Route::post('/admin/logout', [FormController::class, 'logout'])->name('logout');;
 	//ユーザー一覧
-	Route::get('/admin/user_list', [admin\ManageUserController::class, 'user_list'])->name('user_list');;
+	Route::get('/admin/user_list', [admin\ManageUserController::class, 'showUserList'])->name('user_list');;
 	//ユーザー詳細
-	Route::get('/admin/user/{id}', [admin\ManageUserController::class, 'user'])->name('user');;
+	Route::get('/admin/user/{id}', [admin\ManageUserController::class, 'showUserDetail'])->name('user');;
 
 });
 

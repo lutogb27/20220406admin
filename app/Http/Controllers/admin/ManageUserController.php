@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\User;
+use App\Http\Requests\FormRequest;
 use App\Models\Form;
-use App\Http\Controllers\FormController;
+use Illuminate\Http\Request;
 
 class ManageUserController extends Controller
 {
