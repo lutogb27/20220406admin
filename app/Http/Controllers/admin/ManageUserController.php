@@ -5,7 +5,6 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Form;
 use Illuminate\Http\Request;
-use App\User;
 
 class ManageUserController extends Controller
 {
