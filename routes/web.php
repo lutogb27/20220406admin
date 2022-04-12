@@ -30,9 +30,9 @@ Route::group(['middleware' => ['auth.admin']], function () {
 	//ログアウト実行
 	Route::post('/admin/logout', [FormController::class, 'logout'])->name('logout');;
 	//ユーザー一覧
-	Route::get('/admin/user_list', [admin\ManageUserController::class, 'showUserList'])->name('user_list');;
+	Route::get('/admin/user_list', [ManageUserController::class, 'showUserList'])->name('user_list');;
 	//ユーザー詳細
-	Route::get('/admin/user/{id}', [admin\ManageUserController::class, 'showUserDetail'])->name('user');;
+	Route::get('/admin/user/{id}', [ManageUserController::class, 'showUserDetail'])->name('user');;
 
 });
 
