@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+@extends('layouts.app')
+ 
+@section('content')
     @if ($errors->any())
         <ul>
             @foreach ($errors->all() as $error)
@@ -19,48 +22,59 @@
             <div class="heading">お問い合わせ</div>
                 <form method="post" action="{{ route('confirm') }}">
                     <table>
-                        <tbody>
-                            <tr>
-                                <th>名前</th>
-                                <th>フリガナ</th>
-                                <th>年齢</th>
-                                <th>性別</th>
-                                <th>郵便番号</th>
-                                <th>住所</th>
-                                <th>お問い合わせ内容</th>
-                            </tr>
+                     @csrf
+                        <tr>
+                            <th>名前</th>
                             <td>
                                 <input type="text" name="name">
                             </td>
+                        </tr>
 
+                        <tr>
+                            <th>フリガナ</th>
                             <td>
                                 <input type="text" name="name-kana">    
                             </td>
+                        </tr>
 
+                        <tr>
+                            <th>年齢</th>
                             <td>
                                 <input type="text" name="age">
                             </td>
+                        </tr>
 
+                        <tr>
+                            <th>性別</th>    
                             <td>
                                 <input type="text" name="gender"> 
                             </td>
+                        </tr>
 
+                        <tr>
+                            <th>郵便番号</th>
                             <td>
                                 <input type="text" name="zipcode">
                             </td>
+                        </tr>
 
+                        <tr>    
+                            <th>住所</th>
                             <td>
                                 <input type="text" name="address"> 
                             </td>
+                        </tr>
 
+                        <tr>
+                            <th>お問い合わせ内容</th>
                             <td>
                                 <textarea name="body"></textarea>
                             </td>
-                            <td>
-                                <input type="submit" value="送信">
-                            </td>
-                        </tbody> 
+                        </tr>
                     </table>
+
+                    <input type="submit" value="送信">
+
                 </form>
             </div>
         </div>

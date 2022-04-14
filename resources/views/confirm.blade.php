@@ -8,28 +8,58 @@
 </head>
 <body>
     <form method="post" action="{{ route('complete') }}">
+@extends('layouts.app')
+@section('content')
+<div class="panel-heading">お問い合わせ</div>
+    <div class="panel-body">
+        <p>誤りがないことを確認のうえ送信ボタンをクリックしてください。</p>
 
-        {{$form->name}}
+        <table class="table">
+            @csrf
+            <th>名前</th>
+            <td>{{$form->name}}</td>
 
-        {{$form->name-kana}}
+            <th>フリガナ</th>
+            <td>{{$form->"name-kana"}}</td>
 
-        {{$form->age}}
+            <th>年齢</th>
+            <td>{{$form->age}}</td>
 
-        {{$form->gender}}
+            <th>性別</th>
+            <td>{{$form->gender}}</td>
 
-        {{$form->address}}
+            <th>住所</th>
+            <td>{{$form->zipcode}}</td>
 
-        {{$form->zipcode}}
+            <th>郵便番号</th>
+            <td>{{$form->address}}</td>
 
-        {{$form->body}}
+            <th>お問い合わせ内容</th>
+            <td>{{$form->body}}</td>
+        </table>
+
+        {!! Form::open(['url' => 'contact/complete',
+                                    'class' => 'form-horizontal',
+                                    'id' => 'post-input']) !!}
+ 
+            @foreach($contact->getAttributes() as $key => $value)
+                @if(isset($value))
+                    @if(is_array($value))
+                        @foreach($value as $subValue)
+                            <input name="{{ $key }}[]" type="hidden" value="{{ $subValue }}">
+                        @endforeach
+                    @else
+                        {!! Form::hidden($key, $value) !!}
+                    @endif
+ 
+                @endif
+            @endforeach
 
         <input type="submit" name="action" value="戻る">
 
         <input type="submit" name="action" value="送信">
 
-        @foreach($form->getAttributes() as $key => $value)
-            <input type="hidden" name="{{$key}}" value="{{$value}}">
-        @endforeach
     </form>
+@endsection
 </body>
 </html>
