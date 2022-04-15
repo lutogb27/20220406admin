@@ -20,7 +20,7 @@
             <td>{{$form->name}}</td>
 
             <th>フリガナ</th>
-            <td>{{$form->"name-kana"}}</td>
+            <td>{{$form->name-kana}}</td>
 
             <th>年齢</th>
             <td>{{$form->age}}</td>

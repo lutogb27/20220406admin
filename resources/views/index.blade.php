@@ -22,7 +22,7 @@
             <div class="heading">お問い合わせ</div>
                 <form method="post" action="{{ route('confirm') }}">
                     <table>
-                     @csrf
+                    @csrf
                         <tr>
                             <th>名前</th>
                             <td>
