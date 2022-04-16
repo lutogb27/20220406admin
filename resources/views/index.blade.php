@@ -33,7 +33,7 @@
                         <tr>
                             <th>フリガナ</th>
                             <td>
-                                <input type="text" name="name-kana">    
+                                <input type="text" name="kana">    
                             </td>
                         </tr>
 
@@ -74,7 +74,7 @@
                     </table>
 
                     <input type="submit" value="送信">
-
+@endsection
                 </form>
             </div>
         </div>

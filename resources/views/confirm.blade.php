@@ -20,7 +20,7 @@
             <td>{{$form->name}}</td>
 
             <th>フリガナ</th>
-            <td>{{$form->name-kana}}</td>
+            <td>{{$form->kana}}</td>
 
             <th>年齢</th>
             <td>{{$form->age}}</td>
@@ -28,36 +28,25 @@
             <th>性別</th>
             <td>{{$form->gender}}</td>
 
-            <th>住所</th>
+            <th>郵便番号</th>
             <td>{{$form->zipcode}}</td>
 
-            <th>郵便番号</th>
+            <th>住所</th>
             <td>{{$form->address}}</td>
 
             <th>お問い合わせ内容</th>
             <td>{{$form->body}}</td>
         </table>
 
-        {!! Form::open(['url' => 'contact/complete',
-                                    'class' => 'form-horizontal',
-                                    'id' => 'post-input']) !!}
- 
-            @foreach($contact->getAttributes() as $key => $value)
-                @if(isset($value))
-                    @if(is_array($value))
-                        @foreach($value as $subValue)
-                            <input name="{{ $key }}[]" type="hidden" value="{{ $subValue }}">
-                        @endforeach
-                    @else
-                        {!! Form::hidden($key, $value) !!}
-                    @endif
- 
-                @endif
-            @endforeach
 
-        <input type="submit" name="action" value="戻る">
+        <form method="post" action="{{ url('/') }}">
+			@csrf
+		    <input type="submit" class="btn btn-danger" value="戻る" />
 
-        <input type="submit" name="action" value="送信">
+        
+        <form method="post" action="{{ url('/index/complete') }}">
+			@csrf
+		    <input type="submit" class="btn btn-primary" value="送信" />
 
     </form>
 @endsection

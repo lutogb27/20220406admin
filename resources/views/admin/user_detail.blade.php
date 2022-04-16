@@ -19,7 +19,7 @@
 
 			<ul class="list-group">
 				<li class="list-group-item">名前: {{ $user->name }}</li>
-				<li class="list-group-item">フリガナ: {{ $user->name-kana }}</li>
+				<li class="list-group-item">フリガナ: {{ $user->kana }}</li>
         <li class="list-group-item">年齢: {{ $user->age }}</li>
         <li class="list-group-item">性別: {{ $user->gender }}</li>
         <li class="list-group-item">郵便番号: {{ $user->zipcode }}</li>

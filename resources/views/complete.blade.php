@@ -7,6 +7,10 @@
   <title>Document</title>
 </head>
 <body>
+@extends('layouts.app')
+ 
+@section('content')
   Complete
+@endsection
 </body>
 </html>
