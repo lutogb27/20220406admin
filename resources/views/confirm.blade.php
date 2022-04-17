@@ -40,14 +40,15 @@
 
 
         <form method="post" action="{{ url('/') }}">
-			@csrf
-		    <input type="submit" class="btn btn-danger" value="戻る" />
+        @csrf
+            <input type="submit" class="btn btn-danger" value="戻る" />
+        </form>
 
-        
+
         <form method="post" action="{{ url('/index/complete') }}">
-			@csrf
-		    <input type="submit" class="btn btn-primary" value="送信" />
-
+        @csrf
+            <input type="submit" class="btn btn-primary" value="送信" />
+        </form>
     </form>
 @endsection
 </body>

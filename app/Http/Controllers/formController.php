@@ -64,7 +64,7 @@ class FormController extends Controller
 
     // 略    
 
-    return view('complete');
+    return view('/index/complete');
 
     }
 
