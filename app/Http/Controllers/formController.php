@@ -36,7 +36,7 @@ class FormController extends Controller
 
     public function complete(Request $request)
     {
-
+        dd($request->all());
      // ※要バリデーション
 
         $action = $request->input('action', '戻る');
