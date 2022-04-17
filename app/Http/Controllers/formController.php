@@ -54,8 +54,7 @@ class FormController extends Controller
 
             // 戻る
 
-            return redirect()->action('FormController@form')
-->withInput($input);
+            return redirect('/index/complete') ->withInput($input);
     }
 
     // お問い合わせフォームへの入力内容を保持したモデルオブジェクトを用意

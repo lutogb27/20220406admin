@@ -10,16 +10,18 @@
 @extends('layouts.app')
  
 @section('content')
-    @if ($errors->any())
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
     <div class="entire">
         <div class="next">
             <div class="heading">お問い合わせ</div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                /div>
+            @endif
                 <form method="post" action="{{ route('confirm') }}">
                     <table>
                     @csrf
@@ -28,6 +30,9 @@
                             <td>
                                 <input type="text" name="name">
                             </td>
+                            @foreach ($errors->get('name') as $message)
+                                <p class="名前を記入して下さい">{{ $message }}</p>
+                            @endforeach
                         </tr>
 
                         <tr>
@@ -35,6 +40,9 @@
                             <td>
                                 <input type="text" name="kana">    
                             </td>
+                            @foreach ($errors->get('kana') as $message)
+                                <p class="フリガナで記入して下さい">{{ $message }}</p>
+                            @endforeach
                         </tr>
 
                         <tr>
@@ -42,6 +50,9 @@
                             <td>
                                 <input type="text" name="age">
                             </td>
+                            @foreach ($errors->get('kana') as $message)
+                                <p class="年齢を数字で記入して下さい">{{ $message }}</p>
+                            @endforeach
                         </tr>
 
                         <tr>
@@ -49,6 +60,9 @@
                             <td>
                                 <input type="text" name="gender"> 
                             </td>
+                            @foreach ($errors->get('kana') as $message)
+                                <p class="性別を記入して下さい">{{ $message }}</p>
+                            @endforeach
                         </tr>
 
                         <tr>
@@ -56,6 +70,9 @@
                             <td>
                                 <input type="text" name="zipcode">
                             </td>
+                            @foreach ($errors->get('kana') as $message)
+                                <p class="郵便番号を7桁で記入して下さい">{{ $message }}</p>
+                            @endforeach
                         </tr>
 
                         <tr>    
@@ -63,6 +80,9 @@
                             <td>
                                 <input type="text" name="address"> 
                             </td>
+                            @foreach ($errors->get('kana') as $message)
+                                <p class="住所を記入して下さい">{{ $message }}</p>
+                            @endforeach
                         </tr>
 
                         <tr>
@@ -70,6 +90,9 @@
                             <td>
                                 <textarea name="body"></textarea>
                             </td>
+                            @foreach ($errors->get('kana') as $message)
+                                <p class="内容を記入して下さい。">{{ $message }}</p>
+                            @endforeach
                         </tr>
                     </table>
 

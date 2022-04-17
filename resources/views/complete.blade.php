@@ -7,10 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-@extends('layouts.app')
- 
-@section('content')
-  Complete
-@endsection
+  <p>送信しました。ありがとうございました。</p>
 </body>
 </html>
