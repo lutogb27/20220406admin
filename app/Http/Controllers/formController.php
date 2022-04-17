@@ -39,7 +39,7 @@ class FormController extends Controller
 
      // ※要バリデーション
 
-        $action = $request->get('action', '戻る');
+        $action = $request->post('action', '戻る');
         // 二つ目は初期値です。
 
         $input = $request->except('action');
@@ -49,12 +49,12 @@ class FormController extends Controller
 
             // メール送信処理などを実装
 
-        return view('complete');
+        return view('/index/complete');
         } else {
 
             // 戻る
 
-            return redirect('/index/complete') ->withInput($input);
+            return redirect('/') ->withInput($input);
     }
 
     // お問い合わせフォームへの入力内容を保持したモデルオブジェクトを用意
