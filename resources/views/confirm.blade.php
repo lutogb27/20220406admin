@@ -44,10 +44,9 @@
             <input type="submit" class="btn btn-danger" value="戻る" />
         </form>
 
-
         <form method="post" name="action" action="{{ url('/index/complete') }}">
         @csrf
-            <input type="submit" name="action" class="btn btn-primary" value="送信" />
+            <input type="submit" name="action" class="btn btn-primary" value="submit" >送信</input>
         </form>
     </form>
 @endsection

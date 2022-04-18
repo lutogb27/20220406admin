@@ -36,7 +36,6 @@ class FormController extends Controller
 
     public function complete(Request $request)
     {
-        dd($request->all());
      // ※要バリデーション
 
         $action = $request->input('action', '戻る');
@@ -48,7 +47,7 @@ class FormController extends Controller
         if($action === 'submit') {
 
             // メール送信処理などを実装
-            return view('/index/complete');
+            return view('complete');
         } else {
 
             // 戻る
