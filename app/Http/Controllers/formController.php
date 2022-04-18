@@ -20,14 +20,43 @@ class FormController extends Controller
     {
         
         $this->validate($request, [
-        'name'  => 'required',
-        'kana' => 'required',
-        'age' => 'required',
-        'gender' => 'required',
-        'address' => 'required',
-        'zipcode' => 'required',
-        'body' => 'required',
-    ]);
+            'name' => ['required', 'string'],
+            'kana' => ['required', 'string'],
+            'age' => ['required', 'integer', 'between:1,99'],
+            'gender' => ['required', 'string'],
+            'address' => ['required', 'string'],
+            'zipcode' => ['required', 'string'],
+            'body' => ['required', 'string'],
+        ], [
+            'name.required' => ':attributeは必須です。',
+            'kana.required' => ':attributeは必須です。',
+            'age.required' => ':attributeは必須です。',
+            'age.between' => ':attributeは:minから:maxまでです。',
+            'gender.required' => ':attributeは必須です。',
+            'address.required' => ':attributeは必須です。',
+            'zipcode.required' => ':attributeは必須です。',
+            'body.required' => ':attributeは必須です。',
+        ], [
+            'name' => '名前',
+            'kana' => 'フリガナ',
+            'age' => '年齢',
+            'gender' => '性別',
+            'address' => '郵便番号',
+            'zipcode' => '住所',
+            'body' => 'お問い合わせ内容',
+        ]);
+    // ここまで
+ 
+    $myUser->name = request('name');
+    $myUser->kana = request('kana');
+    $myUser->age = request('age');
+    $myUser->gender = request('gender');
+    $myUser->address = request('address');
+    $myUser->zipcode = request('zipcode');
+    $myUser->body = request('body');
+    $myUser->save();
+    return redirect('/myusers');
+    
 
         $form = new Form($request->all());
 
