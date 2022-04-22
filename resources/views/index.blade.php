@@ -111,5 +111,6 @@
             </div>
         </div>
     </div>
+<script src="{{ asset('js/form.js') }}"></script>
 </body>
 </html>
