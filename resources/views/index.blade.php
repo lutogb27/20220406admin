@@ -105,7 +105,7 @@
                         </tr>
                     </table>
 
-                    <input type="submit" value="送信">
+                    <input type="submit" class="submit" value="送信">
 @endsection
                 </form>
             </div>
