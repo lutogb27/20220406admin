@@ -46,7 +46,7 @@
 
         <form method="post" name="action" action="{{ url('/index/complete') }}">
         @csrf
-            <button type="submit"　 class="btn btn-primary" >送信</button>
+            <button type="submit" class="btn btn-primary" >送信</button>
             <input type="hidden" name="action" class="btn btn-primary" value="submit" >
         </form>
     </form>

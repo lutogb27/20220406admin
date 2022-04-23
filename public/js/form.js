@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
     // 「送信」ボタンの要素を取得
-    const submit = document.querySelector('.submit');
+    const submit = document.querySelector('.susumu');
     
     // 「送信」ボタンの要素にクリックイベントを設定する
     submit.addEventListener('click', (e) => {

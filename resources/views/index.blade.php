@@ -103,21 +103,19 @@
                                 <textarea name="body" id="body" placeholder="内容"></textarea>
                             </td>
                         </tr>
-                        <tr>
-                            <th></th>
-                            <td>
-                                <form method="post" name="action" action="{{ url('/index/confirm') }}">
-                                @csrf
-                                <button type="submit" class="submit" >送信</button>
-                                <input type="hidden" name="action" class="btn btn-primary" value="submit" >
-                            </td>
-                        </tr>
-                    </table>
+                    </table>    
+                            <button type="submit" class="susumu" >送信</button>
+
 @endsection
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        document.myform.susumu.addEventListener('click', function() {
+            document.myform.submit();
+        });
+    </script>
 <script src="{{ asset('js/form.js') }}"></script>
 </body>
 </html>
