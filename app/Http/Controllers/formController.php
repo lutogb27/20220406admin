@@ -47,13 +47,14 @@ class FormController extends Controller
         ]);
     // ここまで
  
-    $myUser->name = request('name');
-    $myUser->kana = request('kana');
-    $myUser->age = request('age');
-    $myUser->gender = request('gender');
-    $myUser->address = request('address');
-    $myUser->zipcode = request('zipcode');
-    $myUser->body = request('body');
+    
+    $myUser['name'] = $request->name;
+    $myUser['kana'] = $request->kana;
+    $myUser['age'] = $request->age;
+    $myUser['gender'] = $request->gender;
+    $myUser['address'] = $request->address;
+    $myUser['zipcode'] = $request->zipcode;
+    $myUser['kana'] = $request->kana;
     $myUser->save();
     return redirect('/myusers');
     
