@@ -103,9 +103,16 @@
                                 <textarea name="body" id="body" placeholder="内容"></textarea>
                             </td>
                         </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <form method="post" name="action" action="{{ url('/index/confirm') }}">
+                                @csrf
+                                <button type="submit" class="submit" >送信</button>
+                                <input type="hidden" name="action" class="btn btn-primary" value="submit" >
+                            </td>
+                        </tr>
                     </table>
-
-                    <input type="submit" class="submit" value="送信">
 @endsection
                 </form>
             </div>
