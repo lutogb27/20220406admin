@@ -21,4 +21,9 @@ class ManageUserController extends Controller
 			"user" => $user
 		]);
 	}
+
+	public function index() {
+      $users = User::all();
+      return view('admin.user_list')->with('users', $users);
+    }
 }
