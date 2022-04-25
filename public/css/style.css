@@ -6,7 +6,7 @@ body {
   position: relative;
 }
 
-.validation input {
+.validation {
   width: 200px;
   height: 20px;
   padding: 8px

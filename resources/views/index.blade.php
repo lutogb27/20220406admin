@@ -83,7 +83,7 @@
                             </td>
                         </tr>
                     </table>    
-                        <input type="submit" class="submit">送信</input>
+                        <input type="submit" class="送信"></input>
 
 @endsection
                 </form>
