@@ -8,14 +8,14 @@ function showErrMsg(target) {
 }
 
 //5文字以上でエラーを出す
-$("#age").on("validation change", function(){
+$("#age").on("change", function(){
     if($(this).val().length > 2){
     showErrMsg($(".error-aa"));
     }
 });
 
 //5文字以上でエラーを出す
-$("#zipcode").on("validation change", function(){
+$("#zipcode").on("change", function(){
     if($(this).val().length > 7){
     showErrMsg($(".error-zz"));
     }
